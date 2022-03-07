@@ -2,7 +2,7 @@
 "use strict";
 
 const courseRouter = require("./routes/courses.js");
-//const studentRouter = require("./routes/students.js");
+const studentRouter = require("./routes/students.js");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const express = require("express");
@@ -13,7 +13,7 @@ app.use(express.json());
 
 
 app.use("/api/courses", courseRouter);
-//app.use("/api/students", studentRouter);
+app.use("/api/students", studentRouter);
 
 const port = process.env.PORT || 3030;
 app.listen(port, () =>
